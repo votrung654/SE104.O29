@@ -18,9 +18,9 @@
 
 ## GIỚI THIỆU BẢN THÂN
 <a name="gioithieubanthan"></a>
-* **Họ và tên**: Võ Đình Trung
-* **MSSV**: 22521571
-* **Khoa**: Khoa học Máy tính
+* **Họ và tên**: Đỗ Thanh Sơn
+* **MSSV**: 21522551
+* **Khoa**: Kĩ Thuật Máy tính
 
 ## GIỚI THIỆU MÔN HỌC
 <a name="gioithieumonhoc"></a>
@@ -31,8 +31,7 @@
 
 ## GIẢNG VIÊN HƯỚNG DẪN
 <a name="giangvien"></a>
-* PGS.TS. **Lê Đình Duy** - *duydl@uit.edu.vn*
-* ThS. **Phạm Nguyễn Trường An** - *truonganpn@uit.edu.vn*
+* PGS.TS. **Đỗ Văn Tiến** - *tiendv@uit.edu.vn*
 
 ## THÀNH VIÊN NHÓM
 <a name="thanhvien"></a>
