@@ -18,8 +18,8 @@
 
 ## GIỚI THIỆU BẢN THÂN
 <a name="gioithieubanthan"></a>
-* **Họ và tên**: Võ Đình Trung
-* **MSSV**: 22521571
+* **Họ và tên**: Trương Phúc Trường
+* **MSSV**: 22521587
 * **Khoa**: Khoa học Máy tính
 
 ## GIỚI THIỆU MÔN HỌC
@@ -31,8 +31,7 @@
 
 ## GIẢNG VIÊN HƯỚNG DẪN
 <a name="giangvien"></a>
-* PGS.TS. **Lê Đình Duy** - *duydl@uit.edu.vn*
-* ThS. **Phạm Nguyễn Trường An** - *truonganpn@uit.edu.vn*
+* ThS. **Đỗ Văn Tiến** - *tiendv@uit.edu.vn*
 
 ## THÀNH VIÊN NHÓM
 <a name="thanhvien"></a>
