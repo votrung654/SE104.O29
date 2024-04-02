@@ -39,7 +39,7 @@
 | STT    | MSSV          | Họ và Tên              | Github                                               | Email                   |
 | ------ |:-------------:| ----------------------:|-----------------------------------------------------:|-------------------------:
 | 1      | 22521571      | Võ Đình Trung          | https://github.com/votrung654                             |22521571@gm.uit.edu.vn  |
-| 2      | 22521587      | Trương Phúc Trường     | https://github.com/Truong99zvc                           |22521587gm.uit.edu.vn  |
+| 2      | 22521587      | Trương Phúc Trường     | https://github.com/Truong99zvc                           |22521587@gm.uit.edu.vn  |
 | 3      | 21522551      | Đỗ Thanh Sơn           | https://github.com/Theon910                        |21522551@gm.uit.edu.vn  |
 
 ## ĐỒ ÁN MÔN HỌC
