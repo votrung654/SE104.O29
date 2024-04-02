@@ -18,8 +18,8 @@
 
 ## GIỚI THIỆU BẢN THÂN
 <a name="gioithieubanthan"></a>
-* **Họ và tên**: Trương Phúc Trường
-* **MSSV**: 22521587
+* **Họ và tên**: Võ Đình Trung
+* **MSSV**: 22521571
 * **Khoa**: Khoa học Máy tính
 
 ## GIỚI THIỆU MÔN HỌC
