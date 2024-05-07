@@ -5,7 +5,7 @@
 </p>
 
 <!-- Title -->
-<h1 align="center"><b>SE104.O29 - Nhập môn công nghệ phần mềm</b></h1>
+<h1 align="center"><b>SE104.O29 - NHẬP MÔN CÔNG NGHỆ PHẦN MỀM</b></h1>
 
 
 
