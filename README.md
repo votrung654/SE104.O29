@@ -16,12 +16,6 @@
 * [ Thành viên nhóm](#thanhvien)
 * [ Đồ án môn học](#doan)
 
-## GIỚI THIỆU BẢN THÂN
-<a name="gioithieubanthan"></a>
-* **Họ và tên**: Võ Đình Trung
-* **MSSV**: 22521571
-* **Khoa**: Khoa học Máy tính
-
 ## GIỚI THIỆU MÔN HỌC
 <a name="gioithieumonhoc"></a>
 * **Tên môn học**: Nhập môn công nghệ phần mềm
