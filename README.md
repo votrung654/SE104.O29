@@ -5,7 +5,7 @@
 </p>
 
 <!-- Title -->
-<h1 align="center"><b>CS114.O21 - MÁY HỌC</b></h1>
+<h1 align="center"><b>SE104.O29 - Nhập môn công nghệ phần mềm</b></h1>
 
 
 
