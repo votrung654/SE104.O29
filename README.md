@@ -5,7 +5,7 @@
 </p>
 
 <!-- Title -->
-<h1 align="center"><b>SE104 - NHẬP MÔN CÔNG NGHỆ PHẦM MỀM</b></h1>
+<h1 align="center"><b>SE104.O29 - NHẬP MÔN CÔNG NGHỆ PHẦM MỀM</b></h1>
 
 
 
