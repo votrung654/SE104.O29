@@ -1,0 +1,26 @@
+{
+  "SERVER_URL": "http://localhost",
+  "SERVER_PORT": ":8080",
+  "AuthRoutes": {
+    "Login": "/v1/auth/login"
+  },
+  "ClassRoutes": {
+    "GetAllClass": "/v1/class/get",
+    "GetListStudentInClass": "/v1/class/get/student",
+    "GetTranscripts": "/v1/transcript/get",
+    "UpdateTranscripts": "/v1/transcript/update",
+    "AddStudents": "/v1/class/update",
+    "AddClass": "/v1/class/add"
+  },
+  "Report": {
+    "SubjectReport": "/v1/transcript/show/report/subject",
+    "SemesterReport": "/v1/transcript/show/report/semester",
+    "StudentReport": "/v1/student/get"
+  },
+  "Student": {
+    "AddStudent": "/v1/student/add",
+    "UpdateStudent": "/v1/student/update",
+    "GetStudentDetails": "/v1/student/detail/",
+    "GetAllStudents": "/v1/student/show"
+  }
+}

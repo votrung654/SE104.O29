@@ -1,0 +1,19 @@
+@media only screen and (max-width: 700px) {
+    
+    #classinfo-details{
+       display: block;
+    }
+
+    #classinfo-info{
+        display: block;
+        width: 100%;
+        
+    }
+
+    #classinfo-subjects{
+        display: block;
+        width: calc(100% - 5px);
+        
+
+    }
+}

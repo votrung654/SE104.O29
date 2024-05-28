@@ -1,0 +1,43 @@
+{
+    "CREATE_DB": "CREATE DATABASE ",  
+    "USE_DB": "USE ",
+    "LIST_ALL_CLASSES": "SELECT * FROM sm_class WHERE _year=?;",
+    "LIST_SUBJECTS": "SELECT * FROM sm_subject;",
+
+    "INSERT_STUDENT": "INSERT INTO sm_student(id, name, gender, dob, address, email) VALUES",
+    "UPDATE_STUDENT":
+    {
+        "MAIN_PART": "UPDATE sm_student SET ",
+        "NAME": "name = ", 
+        "GENDER": ", gender = ",
+        "DOB": ", dob = ",
+        "ADDRESS": ", address = ",
+        "EMAIL": ", email = ",
+        "STUDENT_ID": " WHERE id = "
+    },
+    "STUDENT_DETAIL":"SELECT * FROM sm_student WHERE id=",
+    "REMOVE_STUDENT":"DELETE FROM sm_student WHERE id= ",
+    "ASSIGN_STUDENT_CLASS": "INSERT INTO sm_class_list( class, student )VALUES ( ?,?);",
+    "GET_ALL_STUDENT": "SELECT * FROM sm_student",
+
+    "INSERT_CLASS": "INSERT INTO sm_class(id, name, grade, _year) VALUES",
+    "LIST_STUDENT_IN_CLASS": "SELECT sm_student.id AS ID, sm_student.name AS Name, sm_student.gender AS Gender, sm_student.dob AS DOB, sm_student.address AS Address, sm_class.name AS Class FROM sm_class_list,sm_class,sm_student WHERE sm_class_list.class=sm_class.id AND sm_class_list.student=sm_student.id AND sm_class.name=? AND sm_class._year=?;",
+    "NUMBER_OF_STUDENTS_IN_CLASS": "SELECT COUNT(sm_student.id) AS Total FROM sm_class_list,sm_class,sm_student WHERE sm_class_list.class=sm_class.id AND sm_class_list.student=sm_student.id AND sm_class.name=? AND sm_class._year=?;",
+
+    "INSERT_TEACHER": "INSERT INTO sm_teacher(id, password, username, name, gender, dob, address, email, phone) VALUES",
+    "TEACHER_DETAIL": "SELECT username, name, gender, dob, address, email, phone FROM sm_teacher WHERE sm_teacher.id=",
+    "LOGIN_VERIFICATION": "SELECT id, password FROM sm_teacher WHERE sm_teacher.username=",
+    "USERNAME_VERIFICATION": "",
+
+    "SUBJECT_TRANSCRIPT": "SELECT sm_class.name AS Class, sm_subject.name AS Subject, sm_semester.name AS Semester, sm_student.id AS ID, sm_student.name AS Name, sm_transcript.exam_1 , sm_transcript.exam_2 , sm_transcript.exam_1*0.2 + sm_transcript.exam_2*0.8 AS Average FROM sm_student, sm_transcript, sm_semester, sm_subject, sm_class, sm_class_list WHERE sm_student.id=sm_transcript.student_code AND sm_semester.id=sm_transcript.semester AND sm_subject.id=sm_transcript._subject AND sm_student.id=sm_class_list.student AND sm_class.id=sm_class_list.class AND sm_class.name=? AND sm_semester.name=? AND sm_subject.name=? AND sm_class._year=?;",
+    "UPDATE_TRANSCRIPT":"UPDATE sm_transcript, sm_subject, sm_semester SET sm_transcript.exam_1=?, sm_transcript.exam_2=? WHERE sm_transcript._subject=sm_subject.id AND sm_subject.name=? AND sm_transcript.semester=sm_semester.id AND sm_semester.name=? AND student_code=?",
+
+    "AVG_SCORE": "SELECT sm_student.id as StudentID, sm_student.name as StudentName, SUM(sm_transcript.exam_1*0.2 + sm_transcript.exam_2*0.8)/9 AS TBHK FROM sm_student, sm_transcript, sm_semester, sm_subject, sm_class, sm_class_list WHERE sm_student.id=sm_transcript.student_code AND sm_semester.id=sm_transcript.semester AND sm_subject.id=sm_transcript._subject AND sm_student.id=sm_class_list.student AND sm_class.id=sm_class_list.class GROUP BY sm_student.id;",
+    "AVG_RESPECTIVE_CLASS": "select sm_class.id, sm_class.name, sm_class_list.student from sm_class, sm_class_list where sm_class.id = sm_class_list.class and sm_class_list.student = ? and sm_class._year = ?;",
+    "YEARS_LIST": "SELECT * from sm_year",
+    "INSERT_YEAR": "INSERT INTO sm_year(_start, _end, number )VALUES(?,?,?);",
+
+    "SUBJECT_PASS_REPORT": "SELECT sm_class.id, sm_class.name, COUNT(*) AS SoLuongDat FROM sm_student, sm_transcript, sm_semester, sm_subject, sm_class, sm_class_list WHERE sm_student.id=sm_transcript.student_code AND sm_semester.id=sm_transcript.semester AND sm_subject.id=sm_transcript._subject AND sm_student.id=sm_class_list.student AND sm_class.id=sm_class_list.class AND sm_semester.name=? AND sm_subject.name=? AND sm_transcript.exam_1*0.2 + sm_transcript.exam_2*0.8 >= 5 AND sm_class._year=? GROUP BY sm_class.id;",
+    "NO_STUDENT": "SELECT sm_class.id, sm_class.name, COUNT(*) AS SiSo FROM sm_class_list, sm_student, sm_class WHERE sm_class_list.class=sm_class.id AND sm_student.id=sm_class_list.student AND sm_class._year=? GROUP BY sm_class.id;",
+    "SEMESTER_REPORT": "select sm_class.id, sm_class.name, count(student_code) as SoLuongDat from (SELECT student_code, avg((exam_1 + exam_2)/2) as average FROM sm_class as cls, sm_transcript as tsc, sm_class_list as clsl, sm_semester as smt WHERE clsl.student = tsc.student_code and cls.id = clsl.class and tsc.semester = smt.id and smt.name = ? and cls._year = ? GROUP BY student_code HAVING (avg((exam_1 + exam_2)/2) >= 5)) as result, sm_class_list, sm_class where student_code = sm_class_list.student and sm_class.id = sm_class_list.class group by sm_class.id;"
+}

@@ -1,0 +1,203 @@
+{
+  "ChangeLanguage": {
+    "1": "改變語言"
+  },
+  "LMenu-Homepage": {
+    "1": "主頁"
+  },
+  "LMenu-Personal": {
+    "1": "個人"
+  },
+  "LMenu-Inbox": {
+    "1": "收件箱"
+  },
+  "LMenu-Sent": {
+    "1": "已發送"
+  },
+  "LMenu-Profile": {
+    "1": "轮廓"
+  },
+  "LMenu-Schedule": {
+    "1": "时间表"
+  },
+  "LMenu-Archive": {
+    "1": "封存"
+  },
+
+  "LMenu-Usage": {
+    "1": "用法"
+  },
+  "LMenu-System": {
+    "1": "系統"
+  },
+  "LMenu-Users": {
+    "1": "用戶數"
+  },
+  "LMenu-Visitation": {
+    "1": "探訪"
+  },
+
+  "LMenu-Classes": {
+    "1": "Classes"
+  },
+  "LMenu-School": {
+    "1": "学校"
+  },
+  "LMenu-Students": {
+    "1": "学生管理"
+  },
+  "LMenu-ClassAndSubject": {
+    "1": "班级和科目"
+  },
+  "LMenu-Report": {
+    "1": "报告"
+  },
+
+  "ClassInfo-TopBar-Class": {
+    "1": "類"
+  },
+  "ClassInfo-TopBar-Teacher": {
+    "1": "老師"
+  },
+  "ClassInfo-TopBar-Number": {
+    "1": "數"
+  },
+  "ClassInfo-TopBar-Type": {
+    "1": "類型"
+  },
+
+  "ClassInfo-LoadingDataOf": {
+    "1": "正在加載數據"
+  },
+  "ClassInfo-CannotGetDataOf": {
+    "1": "無法獲取的數據"
+  },
+  "ClassInfo-Subject-Info": {
+    "1": "信息"
+  },
+  "ClassInfo-Subject-Math": {
+    "1": "數學"
+  },
+  "ClassInfo-Subject-Physics": {
+    "1": "物理"
+  },
+  "ClassInfo-Subject-Chemistry": {
+    "1": "化學"
+  },
+  "ClassInfo-Subject-Biology": {
+    "1": "生物學"
+  },
+  "ClassInfo-Subject-Literature": {
+    "1": "文獻"
+  },
+  "ClassInfo-Subject-English": {
+    "1": "英語"
+  },
+  "ClassInfo-Subject-Geography": {
+    "1": "地理"
+  },
+  "ClassInfo-Subject-History": {
+    "1": "歷史"
+  },
+
+  "ClassInfo-Table-No": {
+    "1": "序數"
+  },
+  "ClassInfo-Table-Name": {
+    "1": "名稱"
+  },
+  "ClassInfo-Table-UserID": {
+    "1": "用户身份"
+  },
+  "ClassInfo-Table-Status": {
+    "1": "状态"
+  },
+  "ClassInfo-Table-Faculty": {
+    "1": "学院"
+  },
+  "ClassInfo-Table-NationalID": {
+    "1": "国家身份证"
+  },
+  "ClassInfo-Table-DateOfBirth": {
+    "1": "出生日期"
+  },
+  "ClassInfo-Table-Classes": {
+    "1": "班级"
+  },
+  "ClassInfo-Table-Working": {
+    "1": "加工"
+  },
+  "ClassInfo-Table-Sex": {
+    "1": "性別"
+  },
+  "ClassInfo-Table-DOB": {
+    "1": "生日"
+  },
+  "ClassInfo-Table-Address": {
+    "1": "地址"
+  },
+  "ClassInfo-Table-Action": {
+    "1": "行動"
+  },
+  "ClassInfo-Table-Edit": {
+    "1": "編輯"
+  },
+  "ClassInfo-Table-Statistic": {
+    "1": "统计"
+  },
+  "ClassInfo-Table-Reload": {
+    "1": "重装"
+  },
+  "ClassInfo-Table-NewStudent": {
+    "1": "创建一个新学生"
+  },
+  "ClassInfo-Table-Description": {
+    "1": "描述"
+  },
+  "ClassInfo-Table-SelectClass": {
+    "1": "选择班级"
+  },
+  "ClassInfo-Table-SelectSemester": {
+    "1": "选择学期"
+  },
+  "ClassInfo-Table-SelectDetails": {
+    "1": "选择详细资料"
+  },
+  "ClassInfo-Table-Lookup": {
+    "1": "抬头"
+  },
+  "ClassInfo-Table-EnrolledStudents": {
+    "1": "在校学生"
+  },
+  "ClassInfo-Table-NumOfPass": {
+    "1": "达到数量"
+  },
+  "ClassInfo-Table-Percentage": {
+    "1": "百分比"
+  },
+  "ClassInfo-Table-Avg1": {
+    "1": "平均1个学期"
+  },
+  "ClassInfo-Table-Avg2": {
+    "1": "平均2个学期"
+  },
+
+  "ClassInfo-Noti-PleaseSelectOptionsAbove": {
+    "1": "请选择上面的选项"
+  },
+  "ClassInfo-Noti-PleaseSelect": {
+    "1": "请选择"
+  },
+  "ClassInfo-Noti-SubjectReport": {
+    "1": "主题报告"
+  },
+  "ClassInfo-Noti-FinalSemesterReport": {
+    "1": "期末报告"
+  },
+  "ClassInfo-Noti-StudentsReport": {
+    "1": "学生报告"
+  },
+  "ClassInfo-Noti-StudentManagement": {
+    "1": "学生管理"
+  }
+}

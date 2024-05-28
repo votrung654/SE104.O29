@@ -1,0 +1,17 @@
+.ant-menu{
+    background-color: transparent !important;
+    color: white;
+}
+
+ .ant-menu div, .ant-menu ul li a{
+    color: rgb(207, 206, 206);
+}
+
+.ant-menu .active, .ant-menu-item-selected{
+    color : #1f93fe;
+}
+
+.ant-menu-item {
+    margin : 0 !important
+}
+
