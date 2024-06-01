@@ -1,0 +1,175 @@
+
+#classInfo-editForm{
+    position: absolute;
+    z-index: 11001;
+    width: 600px;
+    height: auto;
+    left: calc(( 100% - 600px) / 2);
+    top: calc(50% - 300px);
+    background-color: #AFC7B9;
+    border-radius: 15px;
+    padding-bottom: 15px;
+}
+  
+
+#classInfo-editForm-btnClose{
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 40px;
+    padding: 5px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color:rgb(233, 25, 10 , 0.75);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px rgb(233, 25, 10 , 1);
+}
+
+#classInfo-editForm-btnClose:hover{
+    background-color: rgb(233, 25, 10 , 0.85);
+}
+
+#classInfo-editForm-btnClose:active {
+    background-color: rgb(233, 25, 10 , 0.85);
+    box-shadow: 0 2px rgb(233, 25, 10 , 1);
+    transform: translateY(3px);
+}
+
+#classInfo-editForm-title{
+    display: block;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    background-color: skyblue;
+}
+
+#classInfo-editForm input{
+    outline: none;
+    border: none;
+    padding: 7px 15px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+
+
+.classInfo-editForm-row{
+    position: relative;
+    width: 98%;
+    margin: auto;
+    padding: 10px;
+    background-color: #f3f3f3;
+    display: block;
+    border-radius: 5px;
+}
+
+.mgtop10{
+    margin-top: 10px;
+}
+
+
+/* Name */
+#classInfo-editForm-name{
+    width: calc(100% - 200px);
+    display: inline-block;
+}
+#classInfo-editForm-name input{
+    width: 95%;
+}
+
+#classInfo-editForm-name::before{
+    content: "Full name";
+}
+
+/* Number */
+#classInfo-editForm-no{
+    position: relative;
+    width: 200px;
+    display: inline-block;
+}
+
+#classInfo-editForm-no input{
+    width: 95%;
+}
+
+#classInfo-editForm-no::before{
+    content: "Student Code";
+}
+
+/* DOB */
+#classInfo-editForm-dob{
+    width: calc(100% - 200px);
+    display: inline-block;
+}
+#classInfo-editForm-dob input{
+    width: 95%;
+}
+
+#classInfo-editForm-dob::before{
+    content: "Date of birth";
+}
+
+/* Sex */
+#classInfo-editForm-sex{
+    width: 200px;
+    display: inline-block;
+}
+
+#classInfo-editForm-sex::before{
+    content: "Sex";
+}
+
+/* Address */
+#classInfo-editForm-address{
+    width: calc(100% - 10px);
+    display: inline-block;
+}
+#classInfo-editForm-address input{
+    width: 100%;
+}
+
+#classInfo-editForm-address::before{
+    content: "Address";
+}
+
+#classInfo-editForm-btnSubmit{
+    position: relative;
+    background-color: rgb(58, 179, 58 , 0.75);
+    box-shadow: 0 5px rgb(58, 179, 58, 1);
+    padding: 5px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+
+
+
+#classInfo-editForm-btnSubmit:hover{
+    background-color: rgb(58, 179, 58, 0.85);
+}
+
+#classInfo-editForm-btnSubmit:active {
+    background-color: rgb(58, 179, 58, 0.85);
+    box-shadow: 0 2px rgb(58, 179, 58, 1);
+    transform: translateY(3px);
+}
+
+
+
+
+@media screen and (max-width: 810px) {
+    #classInfo-editForm{
+        left: 2%;
+        width: 96%;
+    }
+}

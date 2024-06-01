@@ -1,0 +1,13 @@
+#RIT-btnEdit span{
+    padding: 4px 8px 4px 8px;
+    width: auto;
+    background-color: rgb(159, 243, 166);
+    border-radius: 10px;
+}
+
+#RIT-btnEdit span:hover {background-color: rgb(106, 218, 115)}
+
+#RIT-btnEdit span:active {
+  background-color: rgb(106, 218, 115);
+  box-shadow: 0px 2px #666;
+}

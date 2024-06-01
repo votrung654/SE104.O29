@@ -1,0 +1,33 @@
+
+
+
+.studentDetailsInfo-wrapper > .ant-card-body{
+   padding: 0px 0px 10px 0px;
+}
+
+.ant-card-loading > .ant-card-body{
+    padding: 10px !important;
+ }
+ 
+
+.studentDetailsInfo{
+
+    padding: 10px;
+}
+
+
+.studentDetailsInfo-1{
+    
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+.studentDetailsInfo-2{
+    margin-right: 10px;
+}
+
+.studentDetailsInfo-3{
+
+}
