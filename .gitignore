@@ -35,5 +35,5 @@ Documents/
 .md
 
 #Test
-.docx
-.xlsx
+/Test_Plan.docx
+/test-case.xlsx
