@@ -1,7 +1,7 @@
 {
 "dbms":"mysql",
 "hostname":"localhost",
-"port":3306,
+"port":49999,
 "username":"qlhs",
 "password":"12345678",
 "dbname":"QLHSDEMO_FINAL",
