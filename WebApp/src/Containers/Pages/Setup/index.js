@@ -7,7 +7,7 @@ import SystemStep from '../../../Components/Setup/System';
 import Loader from '../../../Components/Setup/Loader';
 import {Steps} from "antd";
 import ParticleConfig from "./config";
-import Particles from 'react-tsparticles';
+import Particles from "react-particles-js";
 import Helmet from "react-helmet";
 import FadeIn from "react-fade-in";
 import agent from "../../../Utilities/agent";
