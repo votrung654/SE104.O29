@@ -1,0 +1,39 @@
+#lmenu-bottom-wrapper{
+    position: relative;
+    display: block;
+    bottom: 0px;
+    height: 60px;
+    width: 100%;
+    z-index: 111115;
+    background-color: #363636;
+}
+
+#lmenu-bottom-flagarea{
+    padding-top: 5px;
+}
+
+.flagElm{
+    display: inline-block;
+    width: 33%;
+    padding-left: 5px;
+    vertical-align: top;
+}
+
+#lmenu-bottom-flagarea svg{
+    margin: 0px 5px 0px 5px;
+    cursor: pointer;
+}
+
+#lmenu-bottom-flagarea svg:hover{
+    width: 35px;
+    height: 35px;
+}
+
+#lmenu-bottom-textarea{
+    position: absolute;
+    width: calc(100% - 18px );
+    bottom: 0px;
+    justify-content: center;
+    text-align: center;
+    color: #FFF;
+}

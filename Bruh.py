@@ -1,2 +1,0 @@
-"""Initial Program"""
-print("fdfbbb")
