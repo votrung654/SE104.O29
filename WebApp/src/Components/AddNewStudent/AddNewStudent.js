@@ -19,6 +19,7 @@ import InputEmail from "../Input-Email/InputEmail";
 import { useHttpClient } from "../../Hooks/http-hook";
 import SConfig from "../../config.json";
 import TextTranslation from "../TextTranslation/TextTranslation";
+
 const { Option } = Select;
 
 const AddNewStudent = (props) => {
@@ -61,6 +62,11 @@ const AddNewStudent = (props) => {
       range: "${label} must be between ${min} and ${max}",
     },
   };
+  const calculateAge = (birthday) => {
+    var ageDifMs = Date.now() - birthday.getTime();
+    var ageDate = new Date(ageDifMs);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  }
 
   const sleeper = (ms) => {
     return function (x) {
@@ -82,6 +88,15 @@ const AddNewStudent = (props) => {
       (formatedDate.getMonth() + 1) +
       "/" +
       formatedDate.getDate();
+
+    const minAge = 15; // Minimum age allowed for a student
+    const maxAge = 18; // Maximum age allowed for a student
+      let age = calculateAge(fDOB);
+      if (age < minAge || age > maxAge) {
+        message.error(`The age must be between ${minAge} and ${maxAge}.`);
+        return;
+      }
+
     sendRequest(
       urlRequest,
       "POST",
@@ -117,6 +132,45 @@ const AddNewStudent = (props) => {
   };
 
   const addStudentToClass = (newStudentId) => {
+    const maxStudents = 40; // Maximum number of students allowed in a class
+    function GetListStudentInClass(fClass) {
+    
+      let urlRequest = `${SConfig.SERVER_URL}${SConfig.SERVER_PORT}${SConfig.ClassRoutes.GetListStudentInClass}`;
+
+      sendRequest(
+        urlRequest,
+        "POST",
+        {
+          class: fClass,
+        },
+        {
+          "Content-Type": "application/json",
+        }
+      )
+        .then((response) => {
+          return response.json();
+        })
+
+        .then(sleeper(500))
+
+        .then((data) => {
+          console.log(data);
+          return data.length;
+        })
+
+        .catch((error) => {
+          console.log(error);
+          message.error(`Something wrong with getting list student in class !`);
+        });
+    }
+    // Assuming you have a function to fetch the current number of students in the class
+    const currentStudentsCount = GetListStudentInClass(fClass); // You need to implement this function
+  
+    if (currentStudentsCount >= maxStudents) {
+      message.error(`The class has reached its maximum capacity of ${maxStudents} students.`);
+      return; // Stop the function if the class is full
+    }
+
     let urlRequest = `${SConfig.SERVER_URL}${SConfig.SERVER_PORT}${SConfig.ClassRoutes.AddStudents}`;
 
     sendRequest(

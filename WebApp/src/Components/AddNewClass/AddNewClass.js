@@ -28,11 +28,35 @@ const AddNewClass = (props) => {
   };
  
   const requestCreateClass = () => {
-    if (!className || !classId || !grade || !year) {
+    if (!className || !grade || !year) {
       message.error("All fields are required!");
       return;
     }
+
+    const gradeClasses = {
+      10: ['10A1', '10A2', '10A3', '10A4'],
+      11: ['11A1', '11A2', '11A3'],
+      12: ['12A1', '12A2']
+    };
  
+    let gradeNumber = Number(grade);
+
+    if (![10, 11, 12].includes(gradeNumber)) {
+      message.error("Invalid grade. Only grades 10, 11, and 12 are allowed.");
+      return;
+    }
+  
+    if (!gradeClasses[gradeNumber].includes(className)) {
+      message.error(`Invalid class name for grade ${grade}. Allowed classes are: ${gradeClasses[gradeNumber].join(', ')}`);
+      return;
+    }
+
+    let yearNumber = Number(year);
+    if (![1, 2].includes(yearNumber)) {
+      message.error("Invalid year. Only 1 (for 2023) and 2 (for 2024) are allowed.");
+      return;
+    }
+
     let urlRequest = `${SConfig.SERVER_URL}${SConfig.SERVER_PORT}${SConfig.ClassRoutes.InsertClass}`;
  
     sendRequest(
@@ -41,8 +65,8 @@ const AddNewClass = (props) => {
       {
         id: classId,
         name: className,
-        grade: grade,
-        _year: year
+        grade: gradeNumber,
+        _year: yearNumber
       },
       {
         "Content-Type": "application/json",
@@ -100,7 +124,6 @@ const AddNewClass = (props) => {
             <Button
                 disabled={
                 !(
-                  classId &&
                   className &&
                   grade &&
                   year
@@ -118,17 +141,6 @@ const AddNewClass = (props) => {
           layout="vertical" 
           hideRequiredMark
           >
-          <Form.Item
-            name="id"
-            label="Class ID"
-            rules={[{ required: true, message: "Please enter class ID" }]}
-          >
-            <Input
-              id="classId"
-              onChange={(e) => setClassId(e.target.value)}
-              placeholder="Enter class's ID"
-            />
-          </Form.Item>
           <Form.Item
             name="name"
             label={<TextTranslation textName="ClassInfo-Table-Name.1" />}

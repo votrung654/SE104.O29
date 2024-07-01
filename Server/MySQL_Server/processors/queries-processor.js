@@ -14,7 +14,7 @@ let setupProc       = require('./objects/setup-proc');
 let classProc       = require('./objects/class-proc');
 let transcriptProc  = require('./objects/transcript-proc');
 let yearProc        = require('./objects/year-proc');
-
+let settingProc     = require('./objects/setting-proc');
 function processListStudentsInClass(dbConnection, req, res, urlData)
 {
     if (urlData.classid === undefined) return null;
@@ -64,11 +64,13 @@ function processClassQueries(app, dbConnection)
     // methods.AppPost(app, syntaxes.insert, studentProc.InsertStudent, dbConnection);
     methods.AppPost(app, syntaxes.insert, classProc.InsertClass, dbConnection);
     methods.AppPost(app, syntaxes.update, classProc.AddStudent, dbConnection);
+    methods.AppPost(app, syntaxes.update, classProc.UpdateClass, dbConnection);
     methods.AppPost(app, syntaxes.get + '/student', classProc.GetClassStudent, dbConnection);
 
     methods.AppPost(app, syntaxes.get + '/summary', classProc.GetNumberOfStudentsInClass, dbConnection);
     methods.AppGet(app, syntaxes.get + '/:yearid', classProc.GetAllClasses, dbConnection);
     methods.AppGet(app, syntaxes.get + '/year', classProc.GetAcademicYears, dbConnection);
+    methods.AppGet(app, syntaxes.get + '/classid', classProc.GetClassById, dbConnection);
 }
 //**************************************************
 
@@ -105,6 +107,14 @@ function processAuthenticationQueries(app, dbConnection)
 }
 //*********************************************************
 
+// *****This function processes setting queries*****
+function processSettingQueries(app, dbConnection)
+{
+    methods.AppGet(app, syntaxes.show, settingProc.GetAllSetting, dbConnection);
+    methods.AppPost(app, syntaxes.update, settingProc.UpdateSetting, dbConnection);
+}
+
+
 function processSetupQueries(app, subappList)
 {
     console.log("Setup is not completed, setup API triggered at step " + require('./../utils/system').GetProgress());
@@ -128,5 +138,6 @@ module.exports =
     ProcessSetupQueries: processSetupQueries,
     ProcessClassQueries: processClassQueries,
     ProcessTranscriptQueries: processTranscriptQueries,
-    ProcessYearQueries: processYearQueries
+    ProcessYearQueries: processYearQueries,
+    ProcessSettingQueries: processSettingQueries
 }

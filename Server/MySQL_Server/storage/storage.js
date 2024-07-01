@@ -112,11 +112,29 @@ function insertClass(id, name, grade, _year)
     return query;
 }
 
+function updateClass(id, name, grade, _year)
+{
+    let query = queryJSON.UPDATE_CLASS +
+        `${queryJSON.CLASS_NAME}'${name}', ` +
+        `${queryJSON.CLASS_GRADE}${grade}, ` +
+        `${queryJSON.CLASS_YEAR}${_year} ` +
+        `${queryJSON.CLASS_ID}'${id}';`;
+    console.log(query);
+    return query;
+}
 
 function getPasswordFrom(username)
 {
     let query = queryJSON.LOGIN_VERIFICATION + 
         `'${username}';`
+    console.log(query);
+    return query;
+}
+
+function CreateUser(username, password)
+{
+    let query = queryJSON.CREATE_USER +
+        `('${username}', '${password}');`
     console.log(query);
     return query;
 }
@@ -136,6 +154,16 @@ function assignStudentClass()
     return queryJSON.ASSIGN_STUDENT_CLASS;
 }
 
+function updateSetting(value, settingCode, settingName) {
+    let pack = queryJSON.UPDATE_SETTING;
+    let query = pack.MAIN_PART +
+        `${pack.VALUE}${value}` +
+        `${pack.SETTING_CODE}'${settingCode}'` +
+        `${pack.SETTING_NAME}'${settingName}';`;
+    console.log(query);
+    return query;
+}
+
 module.exports = 
 {
     Query_SetupDatabase             : setupDatabase,
@@ -152,7 +180,9 @@ module.exports =
     Query_GetStudent                : getStudent,
     Query_RemoveStudent             : removeStudent,
     Query_InsertClass               : insertClass,
+    Query_UpdateClass               : updateClass,
     Query_GetPasswordFrom           : getPasswordFrom,
+    Query_CreateUser                : CreateUser,
     Query_GetSubjectTranscript      : getSubjectTranscript,
     Query_GetAvgScore               : getAvgScore,
     Query_AssignStudentClass        : assignStudentClass,
@@ -163,5 +193,7 @@ module.exports =
     Query_NoStudents                : () => queryJSON.NO_STUDENT,
     Query_SemesterReport            : () => queryJSON.SEMESTER_REPORT,
     Query_GetAllStudent             : () => queryJSON.GET_ALL_STUDENT,
-    Query_GetAvgRespectiveClass     : () => queryJSON.AVG_RESPECTIVE_CLASS
+    Query_GetAvgRespectiveClass     : () => queryJSON.AVG_RESPECTIVE_CLASS,
+    Query_GetAllSetting             : () => queryJSON.GET_ALL_SETTING,
+    Query_UpdateSetting             : updateSetting
 }

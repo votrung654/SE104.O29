@@ -117,6 +117,7 @@ const MainLayout = (props) => {
     students: "Student Management",
     class: "Classes and Subjects",
     report: "Report",
+    setting: "Setting",
   };
   const breadCrumbItems = history.location.pathname
     .split("/")

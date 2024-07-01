@@ -2,6 +2,17 @@ let storage = require('./../../storage/storage');
 let statusCodes = require('./../status-codes');
 const { query } = require('express');
 
+function requestLastIdOfPrefix(dbConnection, prefix, callback) {
+    let q = "SELECT count(id) as rawID FROM sm_class where id like ? order by id";
+    dbConnection.query(q, [`${prefix}%`], (err, data, fields) => {
+        console.log(data[0].rawID);
+        let order = (data[0].rawID + 1).toString();
+        while (order.length < 4) order = '0' + order;
+        console.log(order);
+        callback(`${prefix}${order}`);
+    });
+}
+
 function getClassStudent(dbConnection, req, res, urlData) {
     dbConnection.query(storage.Query_ListStudentsInClass(), [urlData.class_name, urlData.yearid], (err, data, fields) => {
         if (err) throw err;
@@ -24,13 +35,27 @@ function getAllClasses(dbConnection, req, res, urlData) {
 }
 
 function insertClass(dbConnection, req, res, urlData) {
+    requestLastIdOfPrefix(dbConnection, new Date(Date.now()).getFullYear().toString(), (id) => 
+    {
         dbConnection.query(storage.Query_InsertClass(
+        id, urlData.name, urlData.grade, urlData._year
+        ), (err, data, fields) => 
+        {
+            if (err) throw err;
+            res.status(statusCodes.OK).json(data);
+        });
+    });
+}
+
+function updateClass(dbConnection, req, res, urlData) {
+    dbConnection.query(storage.Query_UpdateClass(
         urlData.id, urlData.name, urlData.grade, urlData._year
-    ), (err, data, fields) => 
+    ), (err, data, fields) =>
     {
         if (err) throw err;
         res.status(statusCodes.OK).json(data);
-    });
+    }
+    );
 }
 
 function addStudent(dbConnection, req, res, urlData) {
@@ -102,12 +127,25 @@ function getAcademicYears(dbConnection, req, res, urlData) {
     });
 }
 
+function getClassById(dbConnection, req, res, urlData) {
+    dbConnection.query(storage.Query_GetClassById(), [urlData.id], (err, data, fields) => {
+        if (err) throw err;
+        if (data.length === 0) {
+            res.status(statusCodes.NOT_FOUND).json({ message: 'Class not found' });
+        } else {
+            res.status(statusCodes.OK).json(data[0]);
+        }
+    });
+}
+
 module.exports =
 {
     InsertClass: insertClass,
+    UpdateClass: updateClass,
     GetClassStudent: getClassStudent,
     GetNumberOfStudentsInClass: getNumberOfStudentsInClass,
     GetAllClasses: getAllClasses,
     AddStudent: addStudent,
     GetAcademicYears: getAcademicYears,
+    GetClassById: getClassById,
 }

@@ -10,7 +10,9 @@
     "GetTranscripts": "/v1/transcript/get",
     "UpdateTranscripts": "/v1/transcript/update",
     "AddStudents": "/v1/class/update",
-    "InsertClass": "/v1/class/add"
+    "InsertClass": "/v1/class/add",
+    "UpdateClass": "/v1/class/update",
+    "GetClassById": "/v1/class/get2/"
   },
   "Report": {
     "SubjectReport": "/v1/transcript/show/report/subject",
@@ -22,5 +24,9 @@
     "UpdateStudent": "/v1/student/update",
     "GetStudentDetails": "/v1/student/detail/",
     "GetAllStudents": "/v1/student/show"
+  },
+  "SettingRoutes": {
+    "GetAllSettings": "/v1/setting/show",
+    "UpdateSetting": "/v1/setting/update"
   }
 }

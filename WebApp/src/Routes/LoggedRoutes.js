@@ -12,6 +12,8 @@ import Schedule from '../Containers/Schedule/Schedule';
 import Profile from '../Containers/Profile/Profile';
 import Analysis from '../Containers/Analysis/Analysis';
 import Students from '../Containers/Students/Students';
+import Setting from '../Containers/Setting/Setting';
+
 
 const routes = [
     {
@@ -59,6 +61,11 @@ const routes = [
         exact : false,
         main : () => <Profile />
     },
+    {
+        path : '/setting',
+        exact : false,
+        main : () => <Setting />
+    }
 ];
 
 export default routes;

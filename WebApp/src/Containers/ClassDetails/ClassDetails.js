@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+
 import SelectWithTyping from "../../Components/SelectWithTyping/SelectWithTyping";
 import SubmitWithLoading from "../../Components/ButtonWithLoading/ButtonWithLoading";
 
@@ -19,6 +20,7 @@ import TextTranslation from "../../Components/TextTranslation/TextTranslation";
 import { useHttpClient } from "../../Hooks/http-hook";
 
 import AddNewClass from '../../Components/AddNewClass/AddNewClass';
+import ButtonWithLoading from "../../Components/ButtonWithLoading/ButtonWithLoading";
 
 const ClassDetails = (props) => {
   console.log(props.match.params.classCode);
@@ -59,8 +61,6 @@ const ClassDetails = (props) => {
     };
   };
 
-  useEffect(() => {}, []);
-
   const fetchClassDetailsData = () => {
     setIsFetchingClassDetailsData(true);
     setSelectedClassDetailsData({ type: -1 });
@@ -91,9 +91,13 @@ const ClassDetails = (props) => {
             data,
           });
           setIsFetchingClassDetailsData(false);
-          message.success(
-            `${selectedSubject} data of ${selectedClass} loaded successfully !`
-          );
+          if(!selectedSubject)
+            message.success(`Get class details successfully !`);
+          else {
+            message.success(
+              `${selectedSubject} data of ${selectedClass} loaded successfully !`
+            );
+          }
         })
 
         .catch((error) => {
@@ -131,9 +135,13 @@ const ClassDetails = (props) => {
             data,
           });
           setIsFetchingClassDetailsData(false);
-          message.success(
-            `${selectedSubject} data of ${selectedClass} loaded successfully !`
-          );
+          if(!selectedSubject)
+            message.success(`Get class details successfully !`);
+          else {
+            message.success(
+              `${selectedSubject} data of ${selectedClass} loaded successfully !`
+            );
+          }
         })
 
         .catch((error) => {
@@ -146,6 +154,9 @@ const ClassDetails = (props) => {
         });
     }
   };
+  useEffect(() => {
+    fetchClassDetailsData();
+  }, []);
 
   return (
     <>
@@ -163,6 +174,12 @@ const ClassDetails = (props) => {
           key="1"
           className="site-collapse-custom-panel"
         >
+          <ButtonWithLoading
+            label="Reload"
+            isLoading={isFetchingClassDetailsData}
+            onClick={fetchClassDetailsData}
+            maxTimeLoading={1000}
+          />
           <AddNewClass
             classData={props.classData}
             yearid={props.yearid}

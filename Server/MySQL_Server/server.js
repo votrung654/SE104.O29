@@ -21,6 +21,8 @@ let teacherApp  = express();
 let authApp     = express();
 let setupApp    = express();
 let yearApp     = express();
+let settingApp  = express();
+
 let app         = express();
 
 const port      = 8080;
@@ -50,6 +52,10 @@ teacherApp.use(parser.json());
 
 api_v1.use('/auth', authApp); 
 authApp.use(parser.json());
+
+api_v1.use('/setting', settingApp);
+settingApp.use(parser.json());
+
 
 app.use('/setup', setupApp);
 setupApp.use(parser.json());
@@ -86,6 +92,7 @@ setupApp.use(parser.json());
         processor.ProcessAuthenticationQueries(authApp, connection);
         processor.ProcessTranscriptQueries(trscrApp, connection);
         processor.ProcessYearQueries(yearApp, connection);
+        processor.ProcessSettingQueries(settingApp, connection);
     });
 
 }

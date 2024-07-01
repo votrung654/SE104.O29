@@ -92,6 +92,11 @@ const MenuStructure =
                 "displayName" : <TextTranslation textName="LMenu-Report.1"/>,
                 "to" : "/report"
             },
+            {
+                "key" : "setting",
+                "displayName" : <TextTranslation textName="LMenu-Setting.1"/>,
+                "to" : "/setting"
+            }
         ]
     },
     

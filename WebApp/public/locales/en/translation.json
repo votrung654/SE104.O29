@@ -54,7 +54,10 @@
   "LMenu-Report": {
     "1": "Reports"
   },
-
+  "LMenu-Setting": {
+    "1": "Setting"
+  },
+  
   "ClassInfo-TopBar-Class": {
     "1": "Class"
   },

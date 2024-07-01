@@ -30,6 +30,7 @@ const Students = (props) => {
   const { sendRequest } = useHttpClient();
   const [isLoading, setIsLoading] = useState(false);
   const [studentData, setStudentData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const sleeper = (ms) => {
     return function (x) {
@@ -405,12 +406,12 @@ const Students = (props) => {
           />
         </Panel>
       </Collapse>
-
+      <Input placeholder="Search by name" onChange={e => setSearchTerm(e.target.value)} />
       <Table
         bordered
         loading={isLoading}
         columns={columns}
-        dataSource={studentData}
+        dataSource={studentData.filter(student => student.name.toLowerCase().includes(searchTerm.toLowerCase()))}
         scroll={{ x: 50, y: 500 }}
       />
     </>

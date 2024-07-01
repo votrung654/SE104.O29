@@ -53,7 +53,7 @@ CREATE TABLE sm_grade
 
 CREATE TABLE sm_year
 (
-	id int not null auto_increment PRIMARY KEY,
+	id int not null PRIMARY KEY,
 	_start datetime,
 	_end datetime,
 	number int
@@ -82,13 +82,12 @@ CREATE TABLE sm_transcript
 	exam_2 float
 );
 
-
-CREATE TABLE setting
+CREATE TABLE sm_setting
 (
 	id int not null auto_increment PRIMARY KEY,
 	setting_code varchar(40),
 	name varchar(50),
-	value int
+	value float
 );
 
 alter table sm_class

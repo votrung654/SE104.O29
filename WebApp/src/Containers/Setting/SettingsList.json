@@ -1,0 +1,6 @@
+[
+    {"id" : 1, "settingCode" : "minAge", "settingName" : "Minimum Age", "value" : 15},
+    {"id" : 2, "settingCode" : "maxAge", "settingName" : "Maximum Age", "value" : 18} ,
+    {"id" : 3, "settingCode" : "maxClassSize", "settingName" : "Maximum Class Size", "value" : 40},
+    {"id" : 4, "settingCode" : "passingGrade", "settingName" : "Passing Grade", "value" : 5} 
+]
