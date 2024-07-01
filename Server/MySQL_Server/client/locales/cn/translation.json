@@ -1,0 +1,116 @@
+{
+    "ChangeLanguage" : {
+        "1" : "改變語言"
+    },
+    "LMenu-Homepage" : {
+        "1" : "主頁"
+    },
+    "LMenu-Personal" : {
+        "1" : "個人"
+    },
+    "LMenu-Inbox" : {
+        "1" : "收件箱"
+    },
+    "LMenu-Sent" : {
+        "1" : "已發送"
+    },
+    "LMenu-Profile" : {
+        "1" : "轮廓"
+    },
+    "LMenu-Schedule" : {
+        "1" : "时间表"
+    },
+    "LMenu-Archive" : {
+        "1" : "封存"
+    }, 
+
+
+    "LMenu-Usage" : {
+        "1" : "用法"
+    },
+    "LMenu-System" : {
+        "1" : "系統"
+    },
+    "LMenu-Users" : {
+        "1" : "用戶數"
+    },
+    "LMenu-Visitation" : {
+        "1" : "探訪"
+    },
+
+    "LMenu-Classes" : {
+        "1" : "班級"
+    },
+
+
+    "ClassInfo-TopBar-Class" : {
+        "1" : "類"
+    },
+    "ClassInfo-TopBar-Teacher" : {
+        "1" : "老師"
+    },
+    "ClassInfo-TopBar-Number" : {
+        "1" : "數"
+    },
+    "ClassInfo-TopBar-Type" : {
+        "1" : "類型"
+    },
+
+
+    "ClassInfo-LoadingDataOf" : {
+        "1" : "正在加載數據"
+    },
+    "ClassInfo-CannotGetDataOf" : {
+        "1" : "無法獲取的數據"
+    },
+    "ClassInfo-Subject-Info" : {
+        "1" : "信息"
+    },
+    "ClassInfo-Subject-Math" : {
+        "1" : "數學"
+    },
+    "ClassInfo-Subject-Physics" : {
+        "1" : "物理"
+    },
+    "ClassInfo-Subject-Chemistry" : {
+        "1" : "化學"
+    },
+    "ClassInfo-Subject-Biology" : {
+        "1" : "生物學"
+    },
+    "ClassInfo-Subject-Literature" : {
+        "1" : "文獻"
+    },
+    "ClassInfo-Subject-English" : {
+        "1" : "英語"
+    },
+    "ClassInfo-Subject-Geography" : {
+        "1" : "地理"
+    },
+    "ClassInfo-Subject-History" : {
+        "1" : "歷史"
+    },
+
+
+    "ClassInfo-Table-No" : {
+        "1" : "序數"
+    },
+    "ClassInfo-Table-Name" : {
+        "1" : "名稱"
+    },
+    "ClassInfo-Table-Sex" : {
+        "1" : "性別"
+    },
+    "ClassInfo-Table-DOB" : {
+        "1" : "生日"
+    },
+    "ClassInfo-Table-Address" : {
+        "1" : "地址"
+    },
+    "ClassInfo-Table-Action" : {
+        "1" : "行動"
+    },
+    "ClassInfo-Table-Edit" : {
+        "1" : "編輯"
+    }
+}

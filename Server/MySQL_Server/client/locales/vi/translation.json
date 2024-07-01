@@ -1,0 +1,141 @@
+{
+    "ChangeLanguage" : {
+        "1" : "Thay đổi ngôn ngữ"
+    },
+
+    "LMenu-Homepage" : {
+        "1" : "Trang chủ"
+    },
+    
+    "LMenu-Personal" : {
+        "1" : "Cá nhân"
+    },
+    "LMenu-Inbox" : {
+        "1" : "Hộp thư đến"
+    },
+    "LMenu-Sent" : {
+        "1" : "Thư đã gửi"
+    },
+    "LMenu-Archive" : {
+        "1" : "Lưu trữ"
+    },
+    "LMenu-Profile" : {
+        "1" : "Hồ sơ"
+    },
+    "LMenu-Schedule" : {
+        "1" : "Lịch"
+    },
+
+
+    "LMenu-Usage" : {
+        "1" : "Chức năng"
+    },
+    "LMenu-System" : {
+        "1" : "Hệ thống"
+    },
+    "LMenu-Users" : {
+        "1" : "Những người dùng"
+    },
+    "LMenu-Visitation" : {
+        "1" : "Quan sát"
+    },
+
+    "LMenu-Classes" : {
+        "1" : "Danh sách lớp"
+    },
+
+
+
+    "ClassInfo-TopBar-Class" : {
+        "1" : "Lớp"
+    },
+    "ClassInfo-TopBar-Teacher" : {
+        "1" : "GVCN"
+    },
+    "ClassInfo-TopBar-Number" : {
+        "1" : "Sĩ số"
+    },
+    "ClassInfo-TopBar-Type" : {
+        "1" : "Loại"
+    },
+
+
+
+    "ClassInfo-LoadingDataOf" : {
+        "1" : "Đang tải dữ liệu của"
+    },
+    "ClassInfo-CannotGetDataOf" : {
+        "1" : "Không thể tải dữ liệu của"
+    },
+    "ClassInfo-Subject-Info" : {
+        "1" : "Thông Tin"
+    },
+    "ClassInfo-Subject-Math" : {
+        "1" : "Toán"
+    },
+    "ClassInfo-Subject-Physics" : {
+        "1" : "Vật Lý"
+    },
+    "ClassInfo-Subject-Chemistry" : {
+        "1" : "Hóa Học"
+    },
+    "ClassInfo-Subject-Biology" : {
+        "1" : "Sinh Học"
+    },
+    "ClassInfo-Subject-Literature" : {
+        "1" : "Ngữ Văn"
+    },
+    "ClassInfo-Subject-English" : {
+        "1" : "Tiếng Anh"
+    },
+    "ClassInfo-Subject-Geography" : {
+        "1" : "Địa Lý"
+    },
+    "ClassInfo-Subject-History" : {
+        "1" : "Lịch Sử"
+    },
+
+
+    "ClassInfo-Table-No" : {
+        "1" : "STT"
+    },
+    "ClassInfo-Table-Name" : {
+        "1" : "Tên"
+    },
+    "ClassInfo-Table-Sex" : {
+        "1" : "Giới tính"
+    },
+    "ClassInfo-Table-DOB" : {
+        "1" : "Ngày sinh"
+    },
+    "ClassInfo-Table-Address" : {
+        "1" : "Địa chỉ"
+    },
+    "ClassInfo-Table-Action" : {
+        "1" : "Hành động"
+    },
+    "ClassInfo-Table-Edit" : {
+        "1" : "Sửa"
+    },
+
+
+    "ClassInfo-Table-process" : {
+        "1" : "Quá trình"
+    },
+    "ClassInfo-Table-15mins" : {
+        "1" : "15 phút"
+    },
+    "ClassInfo-Table-45mins" : {
+        "1" : "1 tiết"
+    },
+    "ClassInfo-Table-midterm" : {
+        "1" : "Giữa kỳ"
+    },
+    "ClassInfo-Table-endterm" : {
+        "1" : "Cuối kỳ"
+    },"ClassInfo-Table-final" : {
+        "1" : "Tổng kết"
+    }
+
+
+}
