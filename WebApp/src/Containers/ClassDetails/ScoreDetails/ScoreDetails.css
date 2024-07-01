@@ -1,0 +1,15 @@
+.ant-input[disabled] {
+    color: rgba(0, 0, 0, 0.7) !important;
+    background-color: rgb(243, 243, 243);
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.editedRow .ant-table-cell-fix-left{
+    background-color: transparent;
+}
+
+.editedRow, .editedRow:hover > td{
+    background-color: lightpink !important;
+}
+

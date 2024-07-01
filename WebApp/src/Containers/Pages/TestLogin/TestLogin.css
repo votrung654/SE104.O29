@@ -1,0 +1,190 @@
+/* Colors */
+:root {
+  --darkBlue: #217093;
+  --medBlue: #4eb8dd;
+  --lightBlue: #ddf1fa;
+  --inputBG: #f3fafd;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #eff3f4;
+  font-size: 16px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Form Container */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* SVG Container */
+.svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.face {
+  fill: #f1f81a; /* Màu mặt */
+}
+
+.eye {
+  fill: #000000; /* Màu mắt */
+}
+
+.mouthBG {
+  fill: #990000; /* Màu nền miệng */
+}
+
+.mouthOutline,
+.mouthMediumBG,
+.mouthSmallBG,
+.mouthLargeBG {
+  transform: scaleX(100); /* Mở rộng 2 lần theo chiều ngang */
+  stroke: #990000; /* Màu viền miệng */
+}
+
+.armL {
+  fill: #ff8800; /* Màu cánh tay trái */
+  stroke: #ff8800; /* Màu viền cánh tay trái */
+}
+
+.armR {
+  fill: #ff8800; /* Màu cánh tay phải */
+  stroke: #ff8800; /* Màu viền cánh tay phải */
+}
+
+.bodyBGnormal {
+  fill: #eff3f4; /* Màu cơ thể bình thường */
+}
+
+.bodyBGchanged {
+  fill: #ff8800; /* Màu cơ thể khi thay đổi */
+}
+
+/* Input Container */
+.inputContainer {
+  margin: 15px 0;
+}
+
+/* Input Styles */
+.inputContainer label {
+  
+  margin-bottom: 5px;
+  font-size: 1.1em;
+  color: var(--darkBlue);
+  font-weight: 700;
+}
+/* Register Button Styles */
+.register-btn {
+  background-color: #4CAF50; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  font-size: 16px; /* Set a font size */
+  margin-top: 10px; /* Add a top margin */
+}
+
+/* Add a hover effect for the register button */
+.register-btn:hover {
+  background-color: #45a049; /* Darker green background on hover */
+}
+#loginEmail {
+  width: 340px;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid var(--darkBlue);
+  border-radius: 5px;
+  background-color: var(--inputBG);
+  font-size: 1em;
+  color: #353538;
+}
+
+#loginPassword {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  border: 1px solid var(--darkBlue);
+  border-radius: 5px;
+  background-color: var(--inputBG);
+  font-size: 1em;
+  color: #353538;
+}
+
+/* Button Styles */
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: var(--medBlue);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.login-form button[type="submit"] {
+  width: 100%;
+}
+button:hover {
+  background-color: var(--darkBlue);
+}
+
+/* Error Message */
+.error {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Hide SVG Elements */
+.eye,
+.mouthBG,
+.mouthOutline,
+.mouthMediumBG,
+.mouthSmallBG,
+.mouthLargeBG,
+.bodyBGchanged {
+  visibility:visible;
+}
+.armL{
+  display: none;
+}
+.armR{
+  display: none;
+
+}
+.bodyBGchanged {
+  display: none;
+}
+
+.mouth {
+  fill: none;
+  stroke: #662727;
+  stroke-width: 5;
+}

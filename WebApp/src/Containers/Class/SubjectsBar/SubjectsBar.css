@@ -1,0 +1,10 @@
+
+.classinfo-subject-name span{
+    text-decoration: none;
+    color: black;
+}
+
+.activeSubjectBar{
+    padding-top: 2px;
+    border: 3px solid rgb(40, 40, 221);
+}

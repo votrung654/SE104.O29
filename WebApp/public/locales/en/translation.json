@@ -1,0 +1,234 @@
+{
+  "ChangeLanguage": {
+    "1": "Change language"
+  },
+
+  "LMenu-Homepage": {
+    "1": "Homepage"
+  },
+
+  "LMenu-Personal": {
+    "1": "Personal"
+  },
+  "LMenu-Inbox": {
+    "1": "Inbox"
+  },
+  "LMenu-Sent": {
+    "1": "Sent"
+  },
+  "LMenu-Archive": {
+    "1": "Archive"
+  },
+  "LMenu-Profile": {
+    "1": "Profile"
+  },
+  "LMenu-Schedule": {
+    "1": "Schedule"
+  },
+
+  "LMenu-Usage": {
+    "1": "Usage"
+  },
+  "LMenu-System": {
+    "1": "System"
+  },
+  "LMenu-Users": {
+    "1": "Users"
+  },
+  "LMenu-Visitation": {
+    "1": "Visitation"
+  },
+
+  "LMenu-Classes": {
+    "1": "Classes"
+  },
+  "LMenu-School": {
+    "1": "School"
+  },
+  "LMenu-Students": {
+    "1": "Student Management"
+  },
+  "LMenu-ClassAndSubject": {
+    "1": "Classes and Subjects"
+  },
+  "LMenu-Report": {
+    "1": "Reports"
+  },
+
+  "ClassInfo-TopBar-Class": {
+    "1": "Class"
+  },
+  "ClassInfo-TopBar-Teacher": {
+    "1": "Teacher"
+  },
+  "ClassInfo-TopBar-Number": {
+    "1": "Number"
+  },
+  "ClassInfo-TopBar-Type": {
+    "1": "Type"
+  },
+
+  "ClassInfo-LoadingDataOf": {
+    "1": "Loading data of"
+  },
+  "ClassInfo-CannotGetDataOf": {
+    "1": "Cannot get data of"
+  },
+  "ClassInfo-Subject-Info": {
+    "1": "Information"
+  },
+  "ClassInfo-Subject-Math": {
+    "1": "Math"
+  },
+  "ClassInfo-Subject-Physics": {
+    "1": "Physics"
+  },
+  "ClassInfo-Subject-Chemistry": {
+    "1": "Chemistry"
+  },
+  "ClassInfo-Subject-Biology": {
+    "1": "Biology"
+  },
+  "ClassInfo-Subject-Literature": {
+    "1": "Literature"
+  },
+  "ClassInfo-Subject-English": {
+    "1": "English"
+  },
+  "ClassInfo-Subject-Geography": {
+    "1": "Geography"
+  },
+  "ClassInfo-Subject-History": {
+    "1": "History"
+  },
+
+  "ClassInfo-Table-No": {
+    "1": "No.",
+    "2": "No."
+  },
+  "ClassInfo-Table-Name": {
+    "1": "Name",
+    "2": "Name"
+  },
+  "ClassInfo-Table-UserID": {
+    "1": "UserID"
+  },
+  "ClassInfo-Table-Status": {
+    "1": "Status"
+  },
+  "ClassInfo-Table-Faculty": {
+    "1": "Faculty"
+  },
+  "ClassInfo-Table-NationalID": {
+    "1": "National ID"
+  },
+  "ClassInfo-Table-DateOfBirth": {
+    "1": "Date of Birth"
+  },
+  "ClassInfo-Table-Classes": {
+    "1": "Classes"
+  },
+  "ClassInfo-Table-Working": {
+    "1": "Working"
+  },
+  "ClassInfo-Table-Sex": {
+    "1": "Sex"
+  },
+  "ClassInfo-Table-DOB": {
+    "1": "DoB"
+  },
+  "ClassInfo-Table-Address": {
+    "1": "Address"
+  },
+  "ClassInfo-Table-Email": {
+    "1": "Email"
+  },
+  "ClassInfo-Table-Action": {
+    "1": "Action",
+    "2": "Act"
+  },
+  "ClassInfo-Table-Edit": {
+    "1": "Edit"
+  },
+  "ClassInfo-Table-Statistic": {
+    "1": "Statistic"
+  },
+  "ClassInfo-Table-Reload": {
+    "1": "Reload"
+  },
+  "ClassInfo-Table-NewStudent": {
+    "1": "Create a new student"
+  },
+  "ClassInfo-Table-Description": {
+    "1": "Description"
+  },
+  "ClassInfo-Table-SelectClass": {
+    "1": "Select class"
+  },
+  "ClassInfo-Table-SelectSemester": {
+    "1": "Select semester"
+  },
+  "ClassInfo-Table-SelectDetails": {
+    "1": "Select details"
+  },
+  "ClassInfo-Table-Lookup": {
+    "1": "Lookup"
+  },
+  "ClassInfo-Table-EnrolledStudents": {
+    "1": "Enrolled Students"
+  },
+  "ClassInfo-Table-NumOfPass": {
+    "1": "Num of Pass"
+  },
+  "ClassInfo-Table-Percentage": {
+    "1": "Percentage"
+  },
+  "ClassInfo-Table-Avg1": {
+    "1": "Average Sem 1"
+  },
+  "ClassInfo-Table-Avg2": {
+    "1": "Average Sem 2"
+  },
+
+  "ClassInfo-Table-process": {
+    "1": "Process"
+  },
+  "ClassInfo-Table-15mins": {
+    "1": "15 mins",
+    "2": "15'"
+  },
+  "ClassInfo-Table-45mins": {
+    "1": "45 mins",
+    "2": "45'"
+  },
+  "ClassInfo-Table-midterm": {
+    "1": "Mid Term",
+    "2": "Mid"
+  },
+  "ClassInfo-Table-endterm": {
+    "1": "End Term",
+    "2": "End"
+  },
+  "ClassInfo-Table-final": {
+    "1": "Final",
+    "2": "Final"
+  },
+  "ClassInfo-Noti-PleaseSelectOptionsAbove": {
+    "1": "Please select options above"
+  },
+  "ClassInfo-Noti-PleaseSelect": {
+    "1": "Please select"
+  },
+  "ClassInfo-Noti-SubjectReport": {
+    "1": "Subject Report"
+  },
+  "ClassInfo-Noti-FinalSemesterReport": {
+    "1": "Final Semester Report"
+  },
+  "ClassInfo-Noti-StudentsReport": {
+    "1": "Students Report"
+  },
+  "ClassInfo-Noti-StudentManagement": {
+    "1": "Student Management"
+  }
+}
