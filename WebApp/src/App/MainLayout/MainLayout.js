@@ -3,58 +3,47 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import { Layout, Menu, Breadcrumb, message } from "antd";
 import SConfig from "../../config.json";
 import { useHistory } from "react-router-dom";
-
+ 
 import "./MainLayout.css";
-
+ 
 import { updateClassData } from "../../Redux/index";
-
+ 
 import { NavLink } from "react-router-dom";
 import MenuStructure from "./MenuStructure";
-
+ 
 import { connect } from "react-redux";
-
+ 
 import TopBar from "../../Components/TopBar/TopBar";
-
-const { Header, Content, Footer, Sider } = Layout;
+ 
+const { Header, Content, Footer } = Layout;
 const { SubMenu } = Menu;
-
+ 
 const MainLayout = (props) => {
   let history = useHistory();
-
+ 
   const [resultMenuStructure, setResultMenuStructure] = useState([]);
-
-  const [
-    classes, //setClasses
-  ] = useState([]);
-
+ 
+  const [classes] = useState([]);
+ 
   useEffect(() => {
     setResultMenuStructure(renderLAMenuStructure(MenuStructure, false));
   }, [classes]);
-
+ 
   useEffect(() => {
     fetch(
       `${SConfig.SERVER_URL}${SConfig.SERVER_PORT}${SConfig.ClassRoutes.GetAllClass}/${props.yearData.yearid}`
     )
-      .then((response) => {
-        return response.json();
-      })
-
+      .then((response) => response.json())
       .then((classes) => {
         message.success("Loaded class data");
-        //setClasses(classes);
         props.updateClassData(classes);
-
-        /*setTimeout(function() {
-                    document.body.classList.add("loaded");
-                }, 500);*/
       })
-
       .catch((error) => {});
   }, [props.yearData]);
-
+ 
   const renderLAMenuStructure = (kStruct, isSubMenu, parentMenu) => {
     let kElm = [];
-
+ 
     for (let str of kStruct) {
       if (str.children) {
         kElm.push(renderLAMenuStructure(str.children, true, str));
@@ -90,13 +79,7 @@ const MainLayout = (props) => {
     }
     return kElm;
   };
-
-  const [collapsed, setCollapsed] = useState(false);
-
-  const onCollapse = (collapsed) => {
-    setCollapsed(collapsed);
-  };
-
+ 
   const createPathFromIndexOfBreadCrumb = (index) => {
     let path = "/";
     for (let i = 1; i < index + 1; i++) {
@@ -104,7 +87,7 @@ const MainLayout = (props) => {
     }
     return path;
   };
-
+ 
   const breadCrumbItemsMenuTranscript = {
     profile: "Profile",
     schedule: "Schedule",
@@ -117,8 +100,8 @@ const MainLayout = (props) => {
     students: "Student Management",
     class: "Classes and Subjects",
     report: "Report",
-    setting: "Setting",
   };
+ 
   const breadCrumbItems = history.location.pathname
     .split("/")
     .map((e, index) => {
@@ -133,34 +116,32 @@ const MainLayout = (props) => {
         );
       }
     });
-
+ 
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
+      <Header className="header">
         <div className="logo" />
+        <TopBar />
         <Menu
           theme="dark"
+          mode="horizontal"
           defaultSelectedKeys={["homepage"]}
-          mode="inline"
           style={{
-            paddingTop: "64px",
+            lineHeight: '64px',
           }}
         >
           {resultMenuStructure}
         </Menu>
-      </Sider>
-      <Layout className="site-layout">
-        <Header className="site-layout-background" style={{ padding: 0 }}>
-          <TopBar />
-        </Header>
+      </Header>
+      <Layout>
         <Content style={{ margin: "0 16px" }}>
           <Breadcrumb style={{ margin: "16px 0" }}>
             <Breadcrumb.Item onClick={() => history.push("/")}>
-              Homepage
+              Trang chủ
             </Breadcrumb.Item>
             {breadCrumbItems}
           </Breadcrumb>
-
+ 
           <Switch>
             {props.kRoutes}
             <Route>
@@ -168,23 +149,23 @@ const MainLayout = (props) => {
             </Route>
           </Switch>
         </Content>
-        <Footer style={{ textAlign: "center" }}>Team 8 ©2024 </Footer>
+        <Footer style={{ textAlign: "center" }}>Nhóm 8 ©2024</Footer>
       </Layout>
     </Layout>
   );
 };
-
+ 
 const mapStateToProps = (state) => {
   return {
     classData: state.classData,
     yearData: state.yearData,
   };
 };
-
+ 
 const mapDispatchToProps = (dispatch) => {
   return {
     updateClassData: (payload) => dispatch(updateClassData(payload)),
   };
 };
-
+ 
 export default connect(mapStateToProps, mapDispatchToProps)(MainLayout);

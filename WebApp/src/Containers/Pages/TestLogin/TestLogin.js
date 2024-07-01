@@ -1,83 +1,214 @@
-import React, { useState } from 'react';
-import {Button} from 'antd'
+import React, { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import './TestLogin.css';
-
-import agent from "../../../Utilities/agent";
-import ThemeSwitcher from '../../../Components/ThemeSwitcher';
-
-
-export default function TestLogin() {
-
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
-
-    const [pwClass, setPwClass] = useState('');
-   
-
-    const login = (e) => {
-        if(e) e.preventDefault();
-        //sendLoginRequest(username, password);
-        agent.Auth.login(username, password).then(res => {
-            console.log(res.status);
-            if(res.status === 1){
-                loginSuccessfully("sample_token_from_line23_pageTestLogin");
-            }
-        })
+import { useHistory } from 'react-router-dom';
+import agent from '../../../Utilities/agent'; // Ensure agent is correctly set up
+ 
+const TestLogin = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState(null);
+ 
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+  const svgRef = useRef(null);
+  let svgCoords = null;
+  let history = useHistory();
+ 
+  const handleRegisterNavigation = () => {
+    // Thay thế '/register' bằng đường dẫn thực tế của trang đăng ký
+    window.location.href = '/register';
+  };
+ 
+  useEffect(() => {
+    const svgElement = svgRef.current;
+    const emailElement = emailRef.current;
+    svgCoords = getPosition(svgElement);
+ 
+    emailElement.addEventListener('input', onEmailInput);
+    emailElement.addEventListener('focus', onEmailFocus);
+    emailElement.addEventListener('blur', onEmailBlur);
+    passwordRef.current.addEventListener('focus', onPasswordFocus);
+    passwordRef.current.addEventListener('blur', onPasswordBlur);
+ 
+    return () => {
+      emailElement.removeEventListener('input', onEmailInput);
+      emailElement.removeEventListener('focus', onEmailFocus);
+      emailElement.removeEventListener('blur', onEmailBlur);
+      passwordRef.current.removeEventListener('focus', onPasswordFocus);
+      passwordRef.current.removeEventListener('blur', onPasswordBlur);
+    };
+  }, []);
+ 
+  useEffect(() => {
+    if (showPassword) {
+      openEyes();
+    } else {
+      closeEyes();
     }
-
-    const loginSuccessfully = (userData) =>{
-
-        localStorage.setItem("userData", userData);
-        window.location.reload();
+  }, [showPassword]);
+ 
+  const onEmailInput = (e) => {
+    calculateFaceMove(e);
+    const value = e.target.value;
+    setEmail(value);
+  };
+ 
+  const onEmailFocus = () => {
+    onEmailInput({ target: emailRef.current });
+  };
+ 
+  const onEmailBlur = (e) => {
+    if (e.target.value === '') {
+      e.target.parentElement.classList.remove('focusWithText');
     }
-
-    
-    
-    const onFocus = () => {
-        setPwClass("password");
-    }
-
-    const onLostFocus = () => {
-        setPwClass("");
-    }
-
-    return (
-        <div>
-            <div className={`owl`}>
-                <div className={`hand ${pwClass}`} ></div>
-                <div className={`hand hand-r ${pwClass}`}></div>
-                <div className={`arms ${pwClass}`}>
-                    <div className={`arm ${pwClass}`}></div>
-                    <div className={`arm arm-r ${pwClass}`}></div>
-                </div>
-            </div>
-            <div className="form">
-                <div className="control" >
-                    <label className="fa fa-envelope"></label>
-                    <input style={{width : '100%'}} id="user" placeholder="Email" type="email" onChange={(evt) => setUsername(evt.target.value)}></input>
-                </div>
-                <div className="control">
-                    <label className="fa fa-lock"></label>
-                    <input
-                        style={{width : '100%'}}
-                        id="pass"
-                        placeholder="Password"
-                        type="password"
-                        onFocus={() => onFocus()}
-                        onBlur={() => onLostFocus()}
-                        onChange={(evt) => setPassword(evt.target.value)}>
-                    </input>
-                </div>
-                <div>
-                    <Button id="login-button" type="primary" onClick={() => login()}>Login</Button>
-                    <p id="signup-text">Not a member? <a href="#">Sign up Here</a></p>
-                    <p className="login-bottom-text">
-
-                        <a href="#">Terms & Conditions</a> and
-                        <a href="#"> Privacy Policy</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    )
-}
+    resetFace();
+  };
+ 
+  const onPasswordFocus = () => {
+    // Add any specific functionality needed when password input is focused
+  };
+ 
+  const onPasswordBlur = () => {
+    // Add any specific functionality needed when password input is blurred
+  };
+ 
+  const openEyes = () => {
+    const eyeL = document.querySelector('.eyeL');
+    const eyeR = document.querySelector('.eyeR');
+ 
+    gsap.to([eyeL, eyeR], {
+      scaleY: 1,
+      ease: 'expo.out',
+      transformOrigin: 'center center'
+    });
+  };
+ 
+  const closeEyes = () => {
+    const eyeL = document.querySelector('.eyeL');
+    const eyeR = document.querySelector('.eyeR');
+ 
+    gsap.to([eyeL, eyeR], {
+      scaleY: 0.1,
+      ease: 'expo.out',
+      transformOrigin: 'center center'
+    });
+  };
+ 
+  const calculateFaceMove = (e) => {
+    const caretPos = e.target.selectionEnd;
+    const div = document.createElement('div');
+    const span = document.createElement('span');
+    const copyStyle = getComputedStyle(e.target);
+ 
+    Array.from(copyStyle).forEach(prop => {
+      div.style[prop] = copyStyle[prop];
+    });
+ 
+    div.style.position = 'absolute';
+    document.body.appendChild(div);
+    div.textContent = e.target.value.substr(0, caretPos);
+    span.textContent = e.target.value.substr(caretPos) || '.';
+    div.appendChild(span);
+ 
+    const inputRect = getPosition(e.target);
+    const caretCoords = getPosition(span);
+    const caretPosX = caretCoords.x - inputRect.x;
+    const screenCenter = window.innerWidth / 2;
+    const svgCenter = svgCoords.x + svgCoords.width / 2;
+    const fromCenter = svgCenter - screenCenter;
+    const faceMove = (caretPosX - screenCenter) / (screenCenter - 20) * 5;
+ 
+    gsap.to('.face', {
+      x: faceMove,
+      ease: 'expo.out'
+    });
+ 
+    document.body.removeChild(div);
+  };
+ 
+  const resetFace = () => {
+    gsap.to('.face', {
+      x: 0,
+      ease: 'expo.out'
+    });
+  };
+ 
+  const getPosition = (el) => {
+    const rect = el.getBoundingClientRect();
+    return { x: rect.left + window.scrollX, y: rect.top + window.scrollY, width: rect.width, height: rect.height };
+  };
+ 
+  const handleSubmit = (e) => {
+    if (e) e.preventDefault();
+    agent.Auth.login(email, password).then(res => {
+      if (res.status === 1) {
+        loginSuccessfully("sample_token_from_line23_pageTestLogin");
+      } else {
+        setError('Login failed. Please check your email and password.');
+      }
+    }).catch(() => {
+      setError('Login failed. Please check your email and password.');
+    });
+  };
+ 
+  const loginSuccessfully = (userData) => {
+    localStorage.setItem("userData", userData);
+    window.location.reload();
+  };
+ 
+  return (
+    <form className="login-form" onSubmit={handleSubmit}>
+      <div className="svgContainer" ref={svgRef}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180">
+          <path d="M120,20a80,80 0 1,0 0,160a80,80 0 1,0 0,-160" className="face" />
+          <path d="M90,80a10,10 0 1,0 0,20a10,10 0 1,0 0,-20" className="eye eyeL" />
+          <path d="M150,80a10,10 0 1,0 0,20a10,10 0 1,0 0,-20" className="eye eyeR" />
+          <path d="M70,130 q50,40 100,0" className="mouth" />        </svg>
+      </div>
+      <div className="inputContainer">
+        <label htmlFor="loginEmail" id="loginEmailLabel">Email</label>
+        <input
+          type="email"
+          id="loginEmail"
+          ref={emailRef}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <div className="inputContainer">
+        <label htmlFor="loginPassword" id="loginPasswordLabel">Mật khẩu</label>
+        <input
+          type={showPassword ? 'text' : 'password'}
+          id="loginPassword"
+          ref={passwordRef}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <input
+          type="checkbox"
+          id="showPasswordCheck"
+          checked={showPassword}
+          onChange={(e) => setShowPassword(e.target.checked)}
+        />
+        <label
+          htmlFor="showPasswordCheck"
+          id="showPasswordToggle"
+          onMouseDown={() => setShowPassword(true)}
+          onMouseUp={() => setShowPassword(false)}
+        >Hiển thị mật khẩu</label>
+      </div>
+      {error && <div className="error">{error}</div>}
+      <div className="form-actions">
+        <button type="submit">Đăng nhập</button>
+        <footer>
+          <p>Chưa có tài khoản? <a href="/register">Đăng ký ở đây</a></p>
+        </footer>
+      </div>
+    </form>
+  );
+};
+ 
+export default TestLogin;
+ 

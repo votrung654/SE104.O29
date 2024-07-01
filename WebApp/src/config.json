@@ -4,6 +4,9 @@
   "AuthRoutes": {
     "Login": "/v1/auth/login"
   },
+  "Register": {
+    "Register": "/v1/register/register"
+  },
   "ClassRoutes": {
     "GetAllClass": "/v1/class/get",
     "GetListStudentInClass": "/v1/class/get/student",

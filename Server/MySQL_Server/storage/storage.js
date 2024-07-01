@@ -131,9 +131,9 @@ function getPasswordFrom(username)
     return query;
 }
 
-function CreateUser(username, password)
+function createUser(username, password)
 {
-    let query = queryJSON.CREATE_USER +
+    let query = queryJSON.INSERT_USER +
         `('${username}', '${password}');`
     console.log(query);
     return query;
@@ -182,7 +182,7 @@ module.exports =
     Query_InsertClass               : insertClass,
     Query_UpdateClass               : updateClass,
     Query_GetPasswordFrom           : getPasswordFrom,
-    Query_CreateUser                : CreateUser,
+    Query_CreateUser                : createUser,
     Query_GetSubjectTranscript      : getSubjectTranscript,
     Query_GetAvgScore               : getAvgScore,
     Query_AssignStudentClass        : assignStudentClass,

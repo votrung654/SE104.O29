@@ -12,10 +12,17 @@ import Schedule from '../Containers/Schedule/Schedule';
 import Profile from '../Containers/Profile/Profile';
 import Analysis from '../Containers/Analysis/Analysis';
 import Students from '../Containers/Students/Students';
+import Register from '../Containers/Pages/Register/Register'; // Giả sử bạn đã tạo component này
 import Setting from '../Containers/Setting/Setting';
 
 
 const routes = [
+    // Thêm vào mảng routes
+    {
+        path : '/register',
+        exact : true,
+        main : () => <Register />
+    },
     {
         path : '/',
         exact : true,

@@ -19,6 +19,7 @@ let classApp    = express();
 let trscrApp    = express();
 let teacherApp  = express();
 let authApp     = express();
+let registerApp = express();
 let setupApp    = express();
 let yearApp     = express();
 let settingApp  = express();
@@ -52,6 +53,9 @@ teacherApp.use(parser.json());
 
 api_v1.use('/auth', authApp); 
 authApp.use(parser.json());
+
+api_v1.use('/register', registerApp);
+registerApp.use(parser.json());
 
 api_v1.use('/setting', settingApp);
 settingApp.use(parser.json());
@@ -90,6 +94,7 @@ setupApp.use(parser.json());
         processor.ProcessClassQueries(classApp, connection);
         processor.ProcessTeacherQueries(teacherApp, connection);
         processor.ProcessAuthenticationQueries(authApp, connection);
+        processor.ProcessRegisterQueries(registerApp, connection);
         processor.ProcessTranscriptQueries(trscrApp, connection);
         processor.ProcessYearQueries(yearApp, connection);
         processor.ProcessSettingQueries(settingApp, connection);

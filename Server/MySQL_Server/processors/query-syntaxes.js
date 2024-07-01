@@ -13,7 +13,7 @@ const syntaxes =
     remove: `/remove/:id`,
 
     login: `/login`,
-
+    register: `/register`,
     // Setup steps
     setup: {
         database: `/database`,

@@ -107,6 +107,12 @@ function processAuthenticationQueries(app, dbConnection)
 }
 //*********************************************************
 
+function ProcessRegisterQueries(app, dbConnection)
+{
+    methods.AppPost(app, syntaxes.register, authProc.DoRegister, dbConnection);
+ 
+}
+
 // *****This function processes setting queries*****
 function processSettingQueries(app, dbConnection)
 {
@@ -135,6 +141,7 @@ module.exports =
     ProcessStudentQueries: processStudentQueries,
     ProcessTeacherQueries: processTeacherQueries,
     ProcessAuthenticationQueries: processAuthenticationQueries,
+    ProcessRegisterQueries: ProcessRegisterQueries,
     ProcessSetupQueries: processSetupQueries,
     ProcessClassQueries: processClassQueries,
     ProcessTranscriptQueries: processTranscriptQueries,
